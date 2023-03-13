@@ -1,5 +1,5 @@
 import { Builder, By, Key, until } from "selenium-webdriver";
-import "chromedriver";
+const chromedriver = require("chromedriver")
 
 async function runTest() {
   // Set up the Selenium WebDriver
