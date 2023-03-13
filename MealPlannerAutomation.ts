@@ -1,8 +1,9 @@
-import { Builder, By, Key, until } from "selenium-webdriver";
+import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
 const chromedriver = require("chromedriver")
+const driver: WebDriver = newBuilder().withCapabilities(Capabilities.chrome()).build()
 
 async function runTest() {
-  // Set up the Selenium WebDriver
+  // Set up the Selenium WebDriver Navigate to the website
   const driver = await new Builder().forBrowser("chrome").build();
   await driver.manage().window().maximize();
   await driver.get("https://www.mccormick.com/");
