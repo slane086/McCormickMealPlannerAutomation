@@ -1,15 +1,15 @@
 import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
-const chromedriver = require("chromedriver")
-const driver: WebDriver = newBuilder().withCapabilities(Capabilities.chrome()).build()
+const chromedriver = require('chromedriver')
+const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
+
 
 test("adding to meal planner", async () => {
   // Set up the Selenium WebDriver Navigate to the website
   await driver.get("https://www.mccormick.com/");
-  // const driver = await new Builder().forBrowser("chrome").build();
   await driver.manage().window().maximize();
   
 
-  // try {
+  
     // Input username and password
     await driver.findElement(By.id("username")).sendKeys("slane5785@gmail.com");
     await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN);
@@ -37,7 +37,6 @@ test("adding to meal planner", async () => {
 
     // Navigate to meal planner
     await driver.findElement(By.css(".meal-planner-banner__button")).click();
-  // } finally {
     // Quit the WebDriver
     await driver.quit();
   
