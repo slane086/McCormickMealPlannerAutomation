@@ -1,6 +1,7 @@
 import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
 const chromedriver = require('chromedriver')
 const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
+import { BasePage } from "./basePage";
 
 
 test("adding to meal planner", async () => {
@@ -11,6 +12,7 @@ test("adding to meal planner", async () => {
 
   
     // Input username and password
+    await driver.findElement(By.css(".ow-btn-secondary ow-btn-secondary-sm"))
     await driver.findElement(By.id("username")).sendKeys("slane5785@gmail.com");
     await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN);
 
