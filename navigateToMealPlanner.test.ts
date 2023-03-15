@@ -10,3 +10,4 @@ await driver.findElement(By.id("username")).sendKeys("slane5785@gmail.com");
 await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN);
 await driver.findElement(By.css(".nav-item:nth-child(3) > .nav-link")).click();
 await driver.findElement(By.css(".meal-planner-banner__button")).click();
+await driver.quit()
