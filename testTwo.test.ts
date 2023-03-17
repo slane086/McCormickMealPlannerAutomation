@@ -13,7 +13,7 @@ describe("going back to the home page", () => {
         await driver.quit();
       });
 
-test("should open flavor profile and go back to the home page", async () => {
+test("should open flavor profile and go back to the home page and take a screen shot", async () => {
 await driver.get("https://www.mccormick.com/")
 await driver.sleep(3000);
 await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click();

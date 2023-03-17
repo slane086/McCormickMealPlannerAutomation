@@ -19,5 +19,5 @@ await driver.get("https://www.mccormick.com/")
 await driver.sleep(3000);
 await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click();
 await driver.findElement(By.xpath(('//a[text()="Meal Planner"]'))).click();
-})
-})
+});
+});

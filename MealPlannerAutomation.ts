@@ -1,24 +1,15 @@
-import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
-const chromedriver = require('chromedriver')
-const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
-import { BasePage } from "./basePage";
+await driver.findElement(By.xpath(('//a[text()=" Login "]'))).click();
+// This is for the login button
+await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click();
+    // This is for the flavor profile
+await driver.findElement(By.id("username")).sendKeys("slane5785@gmail.com");
+await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN);
+    // This is to input login information
 
-
-test("adding to meal planner", async () => {
-  // Set up the Selenium WebDriver Navigate to the website
-  await driver.get("https://www.mccormick.com/");
-  await driver.manage().window().maximize();
-  
-
-  
-    // Input username and password
-    await driver.findElement(By.css(".ow-btn-secondary ow-btn-secondary-sm"))
-    await driver.findElement(By.id("username")).sendKeys("slane5785@gmail.com");
-    await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN);
-
-    // Navigate to meal planner
-    await driver.findElement(By.css(".nav-item:nth-child(3) > .nav-link")).click();
-    await driver.findElement(By.css(".meal-planner-banner__button")).click();
+    await driver.findElement(By.css('.sign-up-btn')).click();
+    // This is for the sign up button
+    await driver.findElement(By.xpath(('//a[text()="Meal Planner"]'))).click()
+    // This is the red Meal Planner button in the flavor profile page
 
     // Select a day and category on the meal planner
     await driver.findElement(By.css("td[data-column='Wednesday']")).click();
