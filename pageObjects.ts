@@ -15,17 +15,8 @@ mealPlanner: By = By.xpath('//a[text()="Meal Planner"]');
 home2Page: By = By.xpath('//a[@class="component-content"]')
 recipe: By = By.xpath('//a[@class="Recipes"]')
 homePage: By = By.name(" logo ");
-
-
-        constructor(){
+constructor(){
          super({url: 'https://www.mccormick.com/'})
     }
-
-    // async search(searchTerm: string) {
-    //     return this.setInput(this.searchBar, '${searchTerm}\n')
-    // }
-
-    // async getResults() {
-    //     return this.getText(this.results)
     
 }

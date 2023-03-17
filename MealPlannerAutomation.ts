@@ -32,7 +32,3 @@ await driver.findElement(By.id("password")).sendKeys("Password1234", Key.RETURN)
     await driver.findElement(By.css(".meal-planner-banner__button")).click();
     // Quit the WebDriver
     await driver.quit();
-  
-})
-
-// runTest();

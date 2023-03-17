@@ -1,12 +1,13 @@
 import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
+import { BasePage } from "./basePage";
 const chromedriver = require('chromedriver')
 const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
-import { mccormick } from "./mccormickWBP";
+import { mccormick } from "./pageObjects";
 
 
-describe("should navigate to the mealplanner", () => {
+describe("tests for mccormick", () => {
 
-    beforeAll(async () => {
+    beforeEach(async () => {
         await driver.manage().window().maximize();
       });
     
@@ -16,8 +17,8 @@ describe("should navigate to the mealplanner", () => {
 
 test("should open the flavor profile", async () => {
 await driver.get("https://www.mccormick.com/")
-await driver.sleep(3000);
-await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click();
-await driver.findElement(By.xpath(('//a[text()="Meal Planner"]'))).click();
+await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click()
+await driver.findElement(By.xpath(('//a[@text()="Meal Planner"]'))).click();
+await driver.sleep(2000)
 });
 });
