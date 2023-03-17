@@ -10,7 +10,7 @@ interface Options {
 
 export class BasePage {
     driver: WebDriver;
-    url: string;
+    url: string
 
     constructor(options?: Options) {
         if (options && options.driver) this.driver = options.driver;
