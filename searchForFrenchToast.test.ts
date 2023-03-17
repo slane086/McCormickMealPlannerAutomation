@@ -10,7 +10,7 @@ await page.driver.manage().window().maximize();
 await page.driver.sleep(2000);
 await page.click(page.searchBox);
 await page.setInput(page.searchField, "French Toast");
-await fs.writeFile(`${__dirname}/IrishCoffee.png`,
+await fs.writeFile(`${__dirname}/FrenchToast.png`,
 await page.driver.takeScreenshot(), "base64", 
 (e) => {
         if (e) console.error(e)
