@@ -1,26 +1,20 @@
 import { Builder, By, Capabilities, Key, until, WebDriver } from "selenium-webdriver";
-const chromedriver = require('chromedriver')
-const driver: WebDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
 import { mccormick } from "./pageObjects";
 import { BasePage } from "./basePage";
-
-describe("tests for mccormick", () => {
-
-    beforeAll(async () => {
-        await driver.manage().window().maximize();
-      });
-    
-      afterAll(async () => {
-        await driver.quit();
-      });
+const page = new mccormick()
+const fs = require('fs')
 
 test("searching for a recipe", async () => {
-await driver.get("https://www.mccormick.com/")
-await driver.findElement(By.xpath(('//span[@class="icon icon-profile"]'))).click();
-await driver.findElement(By.css(".nav-item:nth-child(3) > .nav-link")).click();
-await driver.findElement(By.css(".meal-planner-banner__button")).click();
-await driver.findElement(By.css("#search-box")).sendKeys("French toast");
-await driver.findElement(By.css(".search-box__button")).click();
-await driver.sleep(2000)
-});
+await page.navigate();
+await page.driver.manage().window().maximize();
+await page.driver.sleep(2000);
+await page.click(page.searchBox);
+await page.setInput(page.searchField, "French Toast");
+await fs.writeFile(`${__dirname}/IrishCoffee.png`,
+await page.driver.takeScreenshot(), "base64", 
+(e) => {
+        if (e) console.error(e)
+        else console.log('Save Successful')
+    })
+    await page.driver.quit()
 });
